@@ -1,43 +1,46 @@
 #!/bin/bash
-
+source variables.sh
 # install nex prerequisites - nats go firecracker
-
-# bash variables
-export NATS_SERVER_VERSION="2.10.9"
-export NATS_CLI_VERSION="0.1.1"
-export GOLANG_VERSION="1.21.6"
-export ARCH="$(uname -m)"
-export KERNEL_VERSION="5.10.204"
-export ROOTFS_VERSION="22.04"
-export FIRECRACKER_SOCKET="/tmp/firecracker.socket"
-export KERNEL_IMAGE_PATH="vmlinux-${KERNEL_VERSION}"
-export ROOTFS_PATH="ubuntu-${ROOTFS_VERSION}"
-
 
 # update image and install unzip
 apt update && apt install unzip
+
+# add a utility method for github
+cat << EOF >> ~/.bashrc
+alias gitpushmain="git branch -M main && git add . && git commit -am 'this' && git push -u origin main"
+EOF
 
 #download nats-server unzip and cp to /usr/local/bin
 curl -L https://github.com/nats-io/nats-server/releases/download/v"${NATS_SERVER_VERSION}"/nats-server-v"${NATS_SERVER_VERSION}"-linux-amd64.zip -o nats-server.zip
 unzip -o nats-server.zip -d nats-server
 sudo cp nats-server/nats-server-v"${NATS_SERVER_VERSION}"-linux-amd64/nats-server /usr/local/bin
+# cleanup nats-server
+# rm -rf nats-server.zip nats-server
 
 # download and install nats client
 curl -fsSL -o nats-cli.deb https://github.com/nats-io/natscli/releases/download/v"${NATS_CLI_VERSION}"/nats-"${NATS_CLI_VERSION}"-amd64.deb 
 dpkg -i nats-cli.deb
+# cleanup nats client
+rm nats-cli.deb
 
 # download and install go
 curl -fsSL -o go"${GOLANG_VERSION}".linux-amd64.tar.gz https://go.dev/dl/go"${GOLANG_VERSION}".linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go"${GOLANG_VERSION}".linux-amd64.tar.gz
+# cleanup go
+rm go"${GOLANG_VERSION}".linux-amd64.tar.gz
 
 # add go to the path
-cp ~/.bashrc ~/.bashrc.backup
-{
-echo ""
-echo "export PATH=\$PATH:/usr/local/go/bin"
-echo ""
-} >> ~/.bashrc
-source ~/.bashrc
+# cp ~/.bashrc ~/.bashrc.backup
+# {
+# echo ""
+# echo "export PATH=\$PATH:/usr/local/go/bin"
+# echo ""
+# } >> ~/.bashrc
+# source ~/.bashrc
+
+cat << EOF >> ~/.bashrc
+export PATH=\$PATH:/usr/local/go/bin
+EOF
 
 # download and install firecracker
 ARCH="$(uname -m)"
@@ -67,5 +70,7 @@ git clone https://github.com/firecracker-microvm/firecracker.git firecracker-rep
 # clone nex repo
 git clone https://github.com/synadia-io/nex.git nex-repo
 
-# do some etl to convert interpolated values of bash variables in the config files
-envsubst < input.json > output.json
+
+
+
+
