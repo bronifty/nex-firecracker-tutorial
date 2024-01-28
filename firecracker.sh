@@ -2,7 +2,7 @@
 source variables.sh
 
 # Write the JSON configuration to a file
-cat << EOF > input.json
+cat << EOF > firecracker-config-input.json
 {
   "boot-source": {
     "kernel_image_path": "${KERNEL_IMAGE_PATH}",
