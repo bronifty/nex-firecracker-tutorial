@@ -1,13 +1,19 @@
 # nex-firecracker-tutorial
 
+### Cleanup
+```bash
+apt install make
+make cleanup
+```
+
 ### Initial Setup with Makefile
 - this will put you inside a firecracker vm terminal session
 	- 'reboot' command to exit
 ```bash
-apt install make
 make make_executable init firecracker
 ```
 
+### 
 
 
 
