@@ -18,6 +18,10 @@ make make_executable init firecracker
 make setup_nex preflight
 ```
 
+### Build EchoService
+```bash
+make build_echo_service
+```
 
 
 
