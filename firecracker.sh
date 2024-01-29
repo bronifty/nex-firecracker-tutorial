@@ -48,5 +48,8 @@ EOF
 # Substitute the variables
 envsubst < firecracker-config-input.json > firecracker-config.json
 
+# cleanup any existing socket
+rm -rf $FIRECRACKER_SOCKET
+
 # run the firecracker with the output.json config file
 firecracker --api-sock "${FIRECRACKER_SOCKET}" --config-file firecracker-config.json
