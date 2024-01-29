@@ -1,5 +1,7 @@
 # nex-firecracker-tutorial
 
+- Trying to get NEX node running in the firecracker vm. It doesn't look like the firecracker vm has network access. Troubleshooting that. 
+
 ```bash
 # make everything executable
 chmod -R +x .
