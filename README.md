@@ -13,3 +13,16 @@ chmod -R +x .
 ./firecracker.sh
 
 ```
+
+- here are the firecracker networking docs
+[https://github.com/firecracker-microvm/firecracker/blob/main/docs/network-setup.md](https://github.com/firecracker-microvm/firecracker/blob/main/docs/network-setup.md)
+
+
+# Nex Setup
+
+```bash
+cd nex-repo/nex && go build .
+cp nex /usr/local/bin/
+which nex
+
+```

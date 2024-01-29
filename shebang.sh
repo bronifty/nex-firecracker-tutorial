@@ -59,11 +59,11 @@ curl -fsSL -o ubuntu-"${ROOTFS_VERSION}".id_rsa https://s3.amazonaws.com/spec.cc
 # Set user read permission on the ssh key
 chmod 400 ./ubuntu-"${ROOTFS_VERSION}".id_rsa
 
-# # clone firecracker repo
-# git clone https://github.com/firecracker-microvm/firecracker.git firecracker-repo
+# clone firecracker repo
+git clone https://github.com/firecracker-microvm/firecracker.git firecracker-repo
 
-# # clone nex repo
-# git clone https://github.com/synadia-io/nex.git nex-repo
+# clone nex repo
+git clone https://github.com/synadia-io/nex.git nex-repo
 
 
 
