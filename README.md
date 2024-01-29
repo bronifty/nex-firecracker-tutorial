@@ -29,6 +29,11 @@ make nats_server
 make build_echo_service
 ```
 
+### Test EchoService
+- in a new terminal
+```bash
+make test_echo_service
+```
 
 
 
