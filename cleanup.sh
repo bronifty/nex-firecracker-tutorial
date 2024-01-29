@@ -1,7 +1,7 @@
 #!/bin/bash
 source variables.sh
 
-rm -rf ubuntu* vmlinux* release* firecracker-repo nex-repo firecracker-config*
+rm -rf ubuntu* vmlinux* release* firecracker-repo nex-repo firecracker-config* simple.json go.* *.go
 
 rm -rf $(dirname $(which firecracker))
 rm -rf $(dirname $(which nats-server))
