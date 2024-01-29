@@ -46,7 +46,7 @@ cat << EOF > firecracker-config-input.json
 EOF
 
 # Substitute the variables
-envsubst < input.json > firecracker-config.json
+envsubst < firecracker-config-input.json > firecracker-config.json
 
 # run the firecracker with the output.json config file
 firecracker --api-sock "${FIRECRACKER_SOCKET}" --config-file firecracker-config.json
