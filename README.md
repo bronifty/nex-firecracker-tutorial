@@ -37,7 +37,11 @@ make build_echo_service
 make test_echo_service
 ```
 
-
+### Static Compile
+- let's compile this echoservice
+```bash
+make static_compile
+```
 
 
 
