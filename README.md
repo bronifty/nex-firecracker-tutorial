@@ -1,5 +1,23 @@
 # nex-firecracker-tutorial
 
+### Initial Setup with Makefile
+- this will put you inside a firecracker vm terminal session
+	- 'reboot' command to exit
+```bash
+apt install make
+make make_executable init firecracker
+```
+
+
+
+
+
+
+
+
+
+
+
 - Trying to get NEX node running in the firecracker vm. It doesn't look like the firecracker vm has network access. Troubleshooting that. 
 
 ```bash
