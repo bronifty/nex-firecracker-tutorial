@@ -1,7 +1,7 @@
 # Makefile
 
 # Default target
-all: make_executable init firecracker setup_nex preflight build_echo_service cleanup nats_server
+all: make_executable init firecracker setup_nex preflight build_echo_service cleanup nats_server static_compile
 
 # cleanup
 cleanup:
@@ -50,4 +50,8 @@ static_compile:
 	go build -tags netgo -ldflags '-extldflags "-static"'
 	file echoservice
 
-.PHONY: all make_executable init firecracker setup_nex preflight build_echo_service test_echo_service cleanup 
+nex_node_up:
+	nex node up --config=./simple.json
+
+
+.PHONY: all make_executable init firecracker setup_nex preflight build_echo_service test_echo_service cleanup static_compile
