@@ -36,14 +36,18 @@ nats_server:
 # Build and run EchoService
 build_echo_service:
 	./create_main_go.sh
-	go mod init nex-firecracker
+	go mod init echoservice
 	go mod tidy
 	go run .
 
 # Test EchoService
 test_echo_service:
-	nats-server &
 	nats req svc.echo 'this is a test'
 	nats micro ls
+
+# Static Build
+static_compile:
+	go build -tags netgo -ldflags '-extldflags "-static"'
+	file echoservice
 
 .PHONY: all make_executable init firecracker setup_nex preflight build_echo_service test_echo_service cleanup 
