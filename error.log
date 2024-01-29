@@ -1,0 +1,20 @@
+nex node up --config=./simple.json
+time=2024-01-29T04:56:28.378Z level=INFO msg="Established node NATS connection" servers=""
+time=2024-01-29T04:56:28.378Z level=INFO msg="Loaded node configuration from '%s'" config_path=./simple.json
+time=2024-01-29T04:56:28.379Z level=INFO msg="Use this key as the recipient for encrypted run requests" public_xkey=XA54YDZOZQDCNVJZOXPHCMXIF3R34X5ECTMFRIFPYGRRJKAPOSXQRKAF
+time=2024-01-29T04:56:28.379Z level=INFO msg="Virtual machine manager starting"
+time=2024-01-29T04:56:28.438Z level=INFO msg="Internal NATs server started" client_url=nats://0.0.0.0:40089
+time=2024-01-29T04:56:28.439Z level=INFO msg="NATS execution engine awaiting commands" id=ND2EJRDOIMLN75OZCFVX2R3QQQV77Y675GQPGFPNXIW7UA5SO26KNGEW version=0.0.1
+time=2024-01-29T04:56:29.105Z level=INFO msg="Called startVMM(), setting up a VMM" firecracker=true vmmid=cmrivv3vk4dko08jqgkg socket_path=/tmp/.firecracker.sock-16421-cmrivv3vk4dko08jqgkg
+time=2024-01-29T04:56:29.118Z level=INFO msg="VMM metrics disabled." firecracker=true vmmid=cmrivv3vk4dko08jqgkg
+time=2024-01-29T04:56:29.119Z level=INFO msg=refreshMachineConfiguration firecracker=true vmmid=cmrivv3vk4dko08jqgkg err="[GET /machine-config][200] getMachineConfigurationOK  &{CPUTemplate: MemSizeMib:0xc0003317a8 Smt:0xc0003317b3 TrackDirtyPages:0xc0003317b4 VcpuCount:0xc0003317a0}"
+time=2024-01-29T04:56:29.120Z level=INFO msg=PutGuestBootSource firecracker=true vmmid=cmrivv3vk4dko08jqgkg err="[PUT /boot-source][204] putGuestBootSourceNoContent "
+time=2024-01-29T04:56:29.120Z level=INFO msg="Attaching drive" firecracker=true vmmid=cmrivv3vk4dko08jqgkg drive_path=/tmp/rootfs-cmrivv3vk4dko08jqgkg.ext4 slot=1 root=true
+time=2024-01-29T04:56:29.121Z level=INFO msg="Attached drive" firecracker=true vmmid=cmrivv3vk4dko08jqgkg drive_path=/tmp/rootfs-cmrivv3vk4dko08jqgkg.ext4 err="[PUT /drives/{drive_id}][204] putGuestDriveByIdNoContent "
+time=2024-01-29T04:56:29.121Z level=INFO msg="Attaching NIC at index" firecracker=true vmmid=cmrivv3vk4dko08jqgkg device_name=tap0 mac_addr=8a:79:84:b8:3c:f3 interface_id=1
+time=2024-01-29T04:56:29.137Z level=INFO msg="startInstance successful" firecracker=true vmmid=cmrivv3vk4dko08jqgkg err="[PUT /actions][204] createSyncActionNoContent "
+time=2024-01-29T04:56:29.138Z level=INFO msg="SetMetadata successful" firecracker=true vmmid=cmrivv3vk4dko08jqgkg
+time=2024-01-29T04:56:29.138Z level=INFO msg="Machine started" vmid=cmrivv3vk4dko08jqgkg ip=192.168.127.2 gateway=192.168.127.1 netmask=ffffff00 hosttap=tap0 nats_host=192.168.127.1 nats_port=40089
+time=2024-01-29T04:56:29.138Z level=INFO msg="Adding new VM to warm pool" ip=192.168.127.2 vmid=cmrivv3vk4dko08jqgkg
+time=2024-01-29T04:56:34.140Z level=ERROR msg="Did not receive NATS handshake from agent within timeout. Exiting unstable node" vmid=cmrivv3vk4dko08jqgkg
+time=2024-01-29T04:56:34.140Z level=INFO msg="Virtual machine manager stopping"
