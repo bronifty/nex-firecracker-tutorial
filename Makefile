@@ -21,10 +21,9 @@ firecracker:
 
 # Setup Nex
 setup_nex:
-	cd nex-repo/nex && go build .
-	cp nex /usr/local/bin/
+	cd nex-repo/nex && go build -o /usr/local/bin/nex
 	which nex
-	cd ../..
+
 
 # Nex Preflight Check
 preflight:

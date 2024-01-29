@@ -1,6 +1,6 @@
 # nex-firecracker-tutorial
 
-### Cleanup
+### Install Make & Cleanup 
 ```bash
 apt install make
 make cleanup
@@ -13,7 +13,10 @@ make cleanup
 make make_executable init firecracker
 ```
 
-### 
+### Setup NEX and Preflight
+```bash
+make setup_nex preflight
+```
 
 
 
