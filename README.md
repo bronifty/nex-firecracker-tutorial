@@ -54,7 +54,15 @@ nex node preflight --config=./simple.json
 ```
 
 ### Build an EchoService
+
 ```bash
+nats-server
+
+```
+
+
+```bash
+
 cat << EOF > ./main.go
 package main
 
@@ -108,7 +116,12 @@ EOF
 go mod init nex-firecracker
 go mod tidy
 go run .
-nats-server
+
+```
+
+```bash
+
 nats req svc.echo 'this is a test'
 nats micro ls
+
 ```
