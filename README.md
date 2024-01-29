@@ -18,7 +18,13 @@ make make_executable init firecracker
 make setup_nex preflight
 ```
 
+### Startup NATS Server
+```bash
+make nats_server
+```
+
 ### Build EchoService
+- in a new terminal
 ```bash
 make build_echo_service
 ```
