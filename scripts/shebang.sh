@@ -17,6 +17,7 @@ EOF
 
 #download nats-server unzip and cp to /usr/local/bin
 curl -L https://github.com/nats-io/nats-server/releases/download/v"${NATS_SERVER_VERSION}"/nats-server-v"${NATS_SERVER_VERSION}"-linux-amd64.zip -o nats-server.zip
+sleep 5
 unzip -o nats-server.zip -d nats-server-dir
 cp nats-server-dir/nats-server-v"${NATS_SERVER_VERSION}"-linux-amd64/nats-server /usr/local/bin/
 # cleanup nats-server
