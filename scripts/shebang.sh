@@ -1,13 +1,14 @@
 #!/bin/bash
-source variables.sh
+source ./cleanup.sh
+source ./variables.sh
 echo $NATS_SERVER_VERSION
 if [ ! -d "/usr/local/bin" ]; then
   mkdir -p /usr/local/bin
 fi
 # install nex prerequisites - nats go firecracker
 
-# update image and install unzip
-apt update && apt install unzip
+# install unzip
+apt install unzip 
 
 # add a utility method for github
 cat << EOF >> ~/.bashrc
@@ -46,25 +47,10 @@ curl -L ${release_url}/download/${latest}/firecracker-${latest}-${ARCH}.tgz \
 mv release-${latest}-$(uname -m)/firecracker-${latest}-${ARCH} firecracker
 mv firecracker /usr/local/bin
 
-# download and install kernel and rootfs
-# Download a linux kernel binary
-curl -fsSL -o vmlinux-"${KERNEL_VERSION}" https://s3.amazonaws.com/spec.ccfc.min/firecracker-ci/v1.7/${ARCH}/vmlinux-"${KERNEL_VERSION}" 
-
-# Download a rootfs
-curl -fsSL -o ubuntu-"${ROOTFS_VERSION}".ext4 https://s3.amazonaws.com/spec.ccfc.min/firecracker-ci/v1.7/${ARCH}/ubuntu-"${ROOTFS_VERSION}".ext4
-
-# Download the ssh key for the rootfs
-curl -fsSL -o ubuntu-"${ROOTFS_VERSION}".id_rsa https://s3.amazonaws.com/spec.ccfc.min/firecracker-ci/v1.7/${ARCH}/ubuntu-"${ROOTFS_VERSION}".id_rsa
-
-# Set user read permission on the ssh key
-chmod 400 ./ubuntu-"${ROOTFS_VERSION}".id_rsa
-
-# clone firecracker repo
-git clone https://github.com/firecracker-microvm/firecracker.git firecracker-repo
-
 # clone nex repo
 git clone https://github.com/synadia-io/nex.git nex-repo
 
+source ~/.bashrc
 
 
 

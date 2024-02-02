@@ -3,5 +3,5 @@ which nats-server
 which nats
 which go
 
-cat /root/.bashrc
+# cat /root/.bashrc
 

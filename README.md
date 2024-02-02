@@ -1,17 +1,14 @@
 # nex-firecracker-tutorial
 
-### Install Make & Cleanup 
-- if you need to rerun any of the steps below, the make cleanup command will give you a clean slate
+# Setup
 ```bash
-apt install make
-make cleanup
+apt update && apt install make
 ```
 
 ### Initial Setup with Makefile
-- this will put you inside a firecracker vm terminal session
-	- 'reboot' command to exit
+- make 
 ```bash
-make make_executable init firecracker
+make make_executable init
 ```
 
 ### Setup NEX and Preflight
