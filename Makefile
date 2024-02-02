@@ -1,11 +1,11 @@
 # Makefile
 
 # Default target
-all: cleanup check vim make_executable init nex preflight nats build test compile run
+all: clean check vim make_executable init nex preflight nats build test compile run
 
-# cleanup
-cleanup:
-	./scripts/cleanup.sh
+# clean
+clean:
+	./scripts/clean.sh
 
 # check
 check:
@@ -57,4 +57,4 @@ run:
 
 
 
-.PHONY: all cleanup check vim make_executable init nex preflight nats build test compile run
+.PHONY: all clean check vim make_executable init nex preflight nats build test compile run
