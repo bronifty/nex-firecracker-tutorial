@@ -16,11 +16,11 @@ vim:
 
 # Make everything executable
 make_executable:
-	chmod -R +x ./scripts/
+	chmod -R +x .
 
 # Run the init script to install prerequisites
 init:
-	./scripts/shebang.sh
+	./shebang.sh
 
 # Setup Nex
 nex:
