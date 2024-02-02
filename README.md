@@ -45,5 +45,12 @@ make compile
 make run
 ```
 
+### NEX devrun
+```bash
+make devrun
+```
+
+
+
 
 

@@ -1,7 +1,7 @@
 # Makefile
 
 # Default target
-all: clean check vim make_executable init nex preflight nats build test compile run
+all: clean check vim make_executable init nex preflight nats build test compile run devrun
 
 # clean
 clean:
@@ -55,6 +55,8 @@ compile:
 run:
 	nex node up --config=/root/nex-firecracker-tutorial/nex-repo/examples/nodeconfigs/simple.json 
 
+devrun:
+	nex devrun ./echoservice nats_url=nats://192.168.127.1:4222
 
 
-.PHONY: all clean check vim make_executable init nex preflight nats build test compile run
+.PHONY: all clean check vim make_executable init nex preflight nats build test compile run devrun
