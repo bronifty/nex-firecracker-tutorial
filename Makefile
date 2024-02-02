@@ -56,7 +56,7 @@ run:
 	nex node up --config=/root/nex-firecracker-tutorial/nex-repo/examples/nodeconfigs/simple.json 
 
 devrun:
-	nex devrun ./echoservice nats_url=nats://192.168.127.1:4222
+	nex devrun nex-repo/examples/echoservice/echoservice nats_url="nats://192.168.127.1:4222"
 
 
 .PHONY: all clean check vim make_executable init nex preflight nats build test compile run devrun
