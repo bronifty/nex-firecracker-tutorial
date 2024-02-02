@@ -1,5 +1,8 @@
 # nex-firecracker-tutorial
 
+[kevin hoffman nex demo](https://youtu.be/EfxtiKMnoyQ?si=43tlix2Urrw2F7w8)
+[synadia nats nex docs](https://docs.nats.io/using-nats/nex/getting-started/deploying-services)
+
 # Setup
 ```bash
 apt update && apt install make 
