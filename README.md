@@ -14,35 +14,35 @@ make make_executable init
 ### Setup NEX and Preflight
 - should result in dependency satisfied with green or ask you to download deps
 ```bash
-make setup_nex preflight
+make nex preflight
 ```
 
 ### Startup NATS Server
 ```bash
-make nats_server
+make nats
 ```
 
 ### Build EchoService
 - in a new terminal
 ```bash
-make build_echo_service
+make build
 ```
 
 ### Test EchoService
 - in a new terminal
 ```bash
-make test_echo_service
+make test
 ```
 
 ### Static Compile
 - let's compile this echoservice
 ```bash
-make static_compile
+make compile
 ```
 
 ### NEX Node Up
 ```bash
-make nex_node_up
+make run
 ```
 
 
