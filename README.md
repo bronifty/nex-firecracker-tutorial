@@ -2,7 +2,7 @@
 
 # Setup
 ```bash
-apt update && apt install make
+apt update && apt install make 
 ```
 
 ### Initial Setup with Makefile
